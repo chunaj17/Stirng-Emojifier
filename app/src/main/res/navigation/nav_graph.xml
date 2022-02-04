@@ -17,6 +17,5 @@
     <fragment
         android:id="@+id/convertToEmoji"
         android:name="com.example.stringemojifier.ConvertToEmoji"
-        android:label="fragment_emoji"
         tools:layout="@layout/fragment_emoji" />
 </navigation>
