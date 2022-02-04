@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">String Emojifier</string>
+    <string name="wellcome">Wellcome To String Emojifier</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_String">Enter String</string>
+    <string name="just_emoji_image">emojiImage</string>
+    <string name="do_you_have_string">Do you have string?</string>
+    <string name="oops_text">Oops...No surprises then!</string>
+    <string name="done">Done</string>
+</resources>

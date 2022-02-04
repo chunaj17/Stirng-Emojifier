@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wellcomeFragment">
+
+    <fragment
+        android:id="@+id/wellcomeFragment"
+        android:name="com.example.stringemojifier.wellcomeFragment"
+        android:label="wellcome"
+        tools:layout="@layout/fragment_wellcome">
+        <action
+            android:id="@+id/action_wellcomeFragment_to_convertToEmoji"
+            app:destination="@id/convertToEmoji" />
+    </fragment>
+    <fragment
+        android:id="@+id/convertToEmoji"
+        android:name="com.example.stringemojifier.ConvertToEmoji"
+        android:label="fragment_emoji"
+        tools:layout="@layout/fragment_emoji" />
+</navigation>
