@@ -31,11 +31,14 @@ class ConvertToEmojiViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     emojiWizString.postValue(response.body())
                 } else {
-                   binding.apply {
-                       doneButton.visibility = View.GONE
-                       valueText.visibility = View.GONE
-                       responseText.text = response.message()
-                   }
+                    println(response.errorBody().toString())
+                    if (response.code() == 422) {
+                     binding.apply {
+                            doneButton.visibility = View.GONE
+                            valueText.visibility = View.GONE
+                            "${response.message()} more than 3 letters are supported".also { responseText.text = it }
+                        }
+                    }
                     emojiWizString.postValue(null)
                 }
             }
