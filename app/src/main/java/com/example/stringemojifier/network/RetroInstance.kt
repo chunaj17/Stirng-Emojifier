@@ -11,14 +11,14 @@ class RetroInstance {
         private const val BASE_URL = "http:10.0.2.2:3000/api/v1/"
 
         fun getRetroInstance(): Retrofit {
-            val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.BODY
-            val client = OkHttpClient.Builder()
-            client.addInterceptor(logging)
+//            val logging = HttpLoggingInterceptor()
+//            logging.level = HttpLoggingInterceptor.Level.BODY
+//            val client = OkHttpClient.Builder()
+//            client.addInterceptor(logging)
 
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .client(client.build())
+              //  .client(client.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

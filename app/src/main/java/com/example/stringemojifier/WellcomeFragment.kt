@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.stringemojifier.databinding.ActivityMainBinding
 import com.example.stringemojifier.databinding.FragmentWellcomeBinding
 
-class wellcomeFragment : Fragment() {
+class WellcomeFragment : Fragment() {
     lateinit var binding: FragmentWellcomeBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         binding = FragmentWellcomeBinding.inflate(layoutInflater)
         binding.oopsText.visibility = View.GONE
         binding.yesButton.setOnClickListener { v: View ->

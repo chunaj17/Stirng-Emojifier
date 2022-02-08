@@ -31,7 +31,6 @@ class ConvertToEmojiViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     emojiWizString.postValue(response.body())
                 } else {
-                    println(response.errorBody().toString())
                     if (response.code() == 422) {
                      binding.apply {
                             doneButton.visibility = View.GONE
