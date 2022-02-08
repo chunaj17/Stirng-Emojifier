@@ -17,11 +17,12 @@ import com.example.stringemojifier.network.UserResponse
 
 lateinit var binding: FragmentEmojiBinding
 lateinit var viewModel: ConvertToEmojiViewModel
+
 class ConvertToEmoji : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentEmojiBinding.inflate(layoutInflater)
 
         initViewModel()
@@ -34,10 +35,9 @@ class ConvertToEmoji : Fragment() {
 
     private fun initViewModel() {
         viewModel = ViewModelProvider(this)[ConvertToEmojiViewModel::class.java]
-        viewModel.getResult().observe(viewLifecycleOwner, Observer <UserResponse?>{
-
-            if(it  == null) {
-              println("noting to response")
+        viewModel.getResult().observe(viewLifecycleOwner) {
+            if (it == null) {
+                println("No response")
             } else {
                 binding.apply {
                     responseText.text = it.stringConvertedToEmoji
@@ -45,17 +45,18 @@ class ConvertToEmoji : Fragment() {
                     valueText.visibility = View.GONE
                 }
             }
-        })
-    }
-    fun View.hideKeyboard() {
-        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(windowToken,0)
-    }
+        }
 
-    private fun convertString() {
-        val user = User(binding.valueText.text.toString())
-        viewModel.convertString(user)
+        }
+        fun View.hideKeyboard() {
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(windowToken, 0)
+        }
+
+        private fun convertString() {
+            val user = User(binding.valueText.text.toString())
+            viewModel.convertString(user)
+        }
+
+
     }
-
-
-}
