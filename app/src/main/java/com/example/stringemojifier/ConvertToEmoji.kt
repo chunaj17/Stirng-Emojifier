@@ -47,16 +47,16 @@ class ConvertToEmoji : Fragment() {
             }
         }
 
-        }
-        fun View.hideKeyboard() {
-            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(windowToken, 0)
-        }
-
-        private fun convertString() {
-            val user = User(binding.valueText.text.toString())
-            viewModel.convertString(user)
-        }
-
-
     }
+
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+
+    private fun convertString() {
+        val user = User(binding.valueText.text.toString())
+        viewModel.convertString(user)
+    }
+
+}
